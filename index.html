@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <title>Strife Documentation</title>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="Strife Framework">
+    <meta content="" name="Jeyz(Jesse) Strife">
+
+    <link href="favicon.ico" rel="shortcut icon">
+    <link href="css/prism.css" rel="stylesheet">
+    <link href="css/sidebar.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<div class="container-fluid heading">
+    <h1>
+        <a href="index.html">
+            <span class="text-highlight">Strife</span> <i class="fa fa-code" style="color:#9d00e0"></i> <span
+                class="text-bold" style="color: #00d2a1">Docs</span>
+        </a><br>
+    </h1>
+    <small>A Fast and Lightweight PHP MVC Framework.</small>
+</div>
+
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div class="border-right" id="sidebar-wrapper">
+        <div class="sidebar-heading">Strife Documentation</div>
+        <br>
+        <div class="list-group list-group-flush">
+            <ul class="treeview">
+                <li><a class="treeview-trigger" href="#welcome-to-strife"><i class="fa fa-plus"></i> Welcome to
+                    Strife</a>
+                    <ul class="doc-sub-menu nav flex-column">
+                        <li><a href="#introduction">Introduction</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#server-requirements">Server Requirements</a></li>
+                    </ul>
+                </li>
+                <li><a class="treeview-trigger" href="#getting-started"><i class="fa fa-plus"></i> Getting started</a>
+                    <ul class="doc-sub-menu nav flex-column">
+                        <li><a href="#manual-installation">Manual Installation</a></li>
+                        <li><a href="#composer-installation">Composer Installation</a></li>
+                        <li><a href="#running-your-first-app">Running your first app</a></li>
+                        <li><a href="#setup-virtual-host">Setup Virtual Host</a></li>
+                    </ul>
+                </li>
+
+                <li><a class="treeview-trigger" href="#basic-tutorial"><i class="fa fa-plus"></i> Basic Tutorial</a>
+                    <ul class="doc-sub-menu nav flex-column">
+                        <li><a href="#static-pages">Static Pages</a></li>
+                        <li><a href="#basic-mvc-structure">Basic MVC structure</a></li>
+                        <li><a href="#conclusion">Conclusion</a></li>
+                    </ul>
+                </li>
+
+                <li><a class="treeview-trigger" href="#code-section"><i class="fa fa-plus"></i> General Topics</a>
+                    <ul class="doc-sub-menu nav flex-column" style="display: none">
+                        <li><a href="#application-structure">Application Structure</a></li>
+                        <li><a href="#model-view-controller">Model View Controller (MVC)</a></li>
+                        <li><a href="#autoloading-classes-with-composer">Autoloading Classes with Composer</a></li>
+                        <li><a href="#api-Reference">API Reference</a></li>
+                        <li><a href="#routing">Routing</a></li>
+                        <li><a href="#controllers">Controllers</a></li>
+                        <li><a href="#views">Views</a></li>
+                        <li><a href="#template-engine">Template Engine</a></li>
+                        <li><a href="#models">Models</a></li>
+                        <li><a href="#form-handling">Form Handling</a></li>
+                        <li><a href="#http-requests">HTTP Requests</a></li>
+                        <li><a href="#auto-validations">Auto-Validations</a></li>
+                        <li><a href="#command-line-interface">Command Line Interface</a></li>
+                        <li><a href="#application-security">Application Security</a></li>
+                        <li><a href="#migrations">Migrations</a></li>
+                        <li><a href="#orm">ORM</a></li>
+                        <li><a href="#caching-webpages">Caching Webpages</a></li>
+                        <li><a href="#multiple-databases">Multiple Databases</a></li>
+                        <li><a href="#helper-functions">Helper Functions</a></li>
+                        <li><a href="#composer-plugins">Composer Plugins</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--sidebar -->
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
+            <button class="btn btn-default" id="menu-toggle"><i class="fa fa-bars"></i></button>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" style="padding: 4px;" href="https://github.com/strifejeyz/framework">Github
+                            <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="padding: 4px 20px;" href="https://www.buymeacoffee.com/9BqcPXS">Buy
+                            me a Coffee?</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="dropdown-toggle btn btn-primary btn-sm" href="#" id="navbarDropdown" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Strife Framework v1.3
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="dl/offline-docs-v1.3.zip">Offline Documentation</a>
+                            <a class="dropdown-item" href="dl/strife-api-v1.3.zip">Download API Documentation</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item"
+                               href="https://github.com/strifejeyz/framework/archive/v1.3-stable.zip">Download Strife
+                                v1.3</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="container-fluid page-wrapper">
+            <p class="page-title">Welcome to Strife</p>
+            <div class="sub-page">
+                <p class="sub-title">Introduction</p>
+                <div class="sub-page-2">
+                    <div class="row">
+                        <div class="col-md-1"><br>
+                            <img src="img/strife.png" style="margin-top: -16px" class="img-fluid">
+                        </div>
+                        <div class="col-md-11">
+                            <h5>A Fast and Lightweight PHP MVC Framework.</h5>
+                            Developed for any type of web applications.
+                            Composed of handy and powerful set of tools for faster and secure development of robust
+                            applications.
+                            <hr>
+                            Strife Framework’s first release was November 10, 2015 as a stable release,
+                            its aim is simplicity, speed, and easy to understand coding structure. <br>
+                            It is compatible with PHP 5.6 and later versions of PHP, It works perfect with
+                            MySQL and supports Apache’s mod_rewrite plugin.
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <p class="sub-title">Strife features:</p>
+                <div class="sub-page-2">
+                    Smart Routing
+                    <ul>
+                        <li>Uses pretty URLs and Smart Routing class.</li>
+                        <li>Provides greater flexibility in handling forms and CRUD.</li>
+                    </ul>
+                    Query Builder
+                    <ul>
+                        <li>Has beautiful coding structure for the benefit of the developer.</li>
+                        <li>"Greater Readability = Greater Scalability" chaining queries together to form a beautifully
+                            written code.
+                        </li>
+                    </ul>
+                    Multi-Database Support
+                    <ul>
+                        <li>Can easily manage multiple databases of your choice</li>
+                        <li>Includes Migration manager, Seeders, Backup/Restore directly accessible using Yamato Command
+                            Line Interface
+                        </li>
+                    </ul>
+                    Form Builder
+                    <ul>
+                        <li>Powerful class for Automated forms that handles form errors and auto-populates inputs for
+                            you
+                        </li>
+                    </ul>
+                    HTTP Request Handlers
+                    <ul>
+                        <li>Handles form validations, auto-populates, and handles file uploads flawlessly.</li>
+                    </ul>
+                    Migration Manager
+                    <ul>
+                        <li>Build your database using Migration Manager in few taps, gives you full access to migrating
+                            your
+                            database for production using YamatoCLI
+                        </li>
+                    </ul>
+                    Encryption/Hashing
+                    <ul>
+                        <li>Handles one-way data hashing algorithm for strong passwords as well as Encryption and Tokens
+                            for
+                            password management
+                        </li>
+                    </ul>
+                    Command Line Interface
+                    <ul>
+                        <li>A Powerful CLI Application that packs a punch built for Strife Framework</li>
+                    </ul>
+                    Template Engine
+                    <ul>
+                        <li>Your code is your masterpiece, A beautiful, fast and easy to use Template Engine is your
+                            tool to
+                            make it happen.
+                        </li>
+                    </ul>
+                    Page Caching
+                    <ul>
+                        <li>Pages and Templates are cached automatically and that makes every pages load faster.</li>
+                    </ul>
+                    Helper Functions
+                    <ul>
+                        <li>Includes bunch of helper functions at your fingertips.</li>
+                    </ul>
+                </div>
+            </div><!--sub-page-->
+
+            <br>
+
+            <div class="sub-page">
+                <p class="sub-title">Server Requirements</p>
+                <div class="sub-page-2">
+                    <ul>
+                        <li>PHP version 5.6 or newer is required to be installed.</li>
+                        <li>MySQL (5.1+) via the PDO driver</li>
+                        <li>Composer via <a href="https://getcomposer.org">https://getcomposer.org</a></li>
+                        <li>Apache’s mod_rewrite module (Required for Virtual Host)</li>
+                    </ul>
+                </div>
+            </div><!--sub-page-->
+
+            <br>
+
+            <p class="page-title">Getting Started</p>
+            <div class="sub-page">
+                <p class="sub-title" id="manual-installation">Manual Installation</p>
+                <div class="sub-page-2">
+                    <div class="alert alert-warning">
+                        NOTE: Using this framework assumes you already have a basic knowledge of core PHP as well as
+                        familiarity with Object-Oriented Programming(OOP),
+                        you will learn eventually about how a Model-View-Controller works within this documentation.
+                    </div>
+                    <div class="section-block">
+                        <ul style="padding: 0">
+                            <li>Download the latest <a
+                                    href="https://github.com/strifejeyz/framework/releases">release</a> on Github
+                                extract it to public_html or project root.
+                            </li>
+                            <li>You can also clone master branch:</li>
+                        </ul>
+                        <pre><code class="language-bash">git clone https://github.com/strifejeyz/framework</code></pre>
+
+                        <br>
+
+                        All the steps given should give you the Strife landing page. At that point, you won't be
+                        able to utilize yet the routing engine
+                        since Strife uses mod_rewrite module in Apache for URL routing and we NEED to setup the Virtual
+                        Host in your local computer so we can make it look like for example this: <code class="language-http">http://myapp.dev/</code>
+
+                        <br>
+                        <br>
+
+                    </div>
+                </div>
+
+                <p class="sub-title" id="composer-installation">Composer Installation</p>
+                <div class="sub-page">
+                    Composer is a very useful package manager to install third party plugins like Image
+                    Intervention, Faker, and hundreds of thousands of
+                    open-source packages available to extend your application. It is mainly used by Strife Framework
+                    for autoloading classes as it’s
+                    easier to install project dependencies and plugins. <br><br>
+                    It is recommended to install Composer if you are going to use the built-in Command
+                    Line Interface in this framework. Refer to <a href="getcomposer.org">getcomposer.org</a> for a
+                    complete tutorial on how to install it with Linux/Unix/Mac and for Windows.
+                </div>
+
+                <br>
+                <br>
+
+                <p class="sub-title" id="first-app">Running your first app</p>
+                <div class="sub-page">
+                    If you are testing it in your live server, make sure index.php and other project files are in the
+                    same directory <br>
+                    inside your public_html (project root) and you can run it using your base url e.g.
+                    <code class="language-http">http://example.com</code>
+                    <br>
+                    If you are on a local environment (which most of the time you will be), you can test it like so
+                    <code class="language-http">http://localhost/myapp</code>
+                    <br>
+                    assuming myapp is the directory where the project files are in or you can cd to your project root
+                    and run php serve index.php
+                    <br><br>
+                    Well, it’s not over yet. Since Strife Framework uses smart URL routing, we NEED to setup the Virtual Host in your local
+                    computer so we can make it look like for example:
+                    <code class="language-http">http://myapp.dev/</code>
+                </div>
+                <br>
+                <br>
+
+                <p class="sub-title" id="setting-up-virtual-host">Setting up Virtual Host</p>
+                <div class="sub-page">
+                    <p class="sub-title">Virtual Host Installation for Windows</p>
+
+                    <p>1. Open and run Command Prompt as Administrator</p>
+                    <p>
+                        2. Issue the command <code class="language-bash">echo 127.0.0.1 myapp.dev >> C:/Windows/System32/drivers/etc/hosts</code>
+                        where myapp.dev for example is your custom server name. You can pick whatever you like.
+                    </p>
+                    <p>
+                        3. using any text editor or notepad, open the httpd-vhosts.conf file. <br>
+                        for xampp, usually in <code class="language-bash">c:/xampp/apache/conf/extra/httpd-vhosts.conf</code>
+                        <br>
+                        for wamp, usually in <code class="language-bash">C:/wamp/bin/apache/AapcheXXX/conf/extra/httpd-vhosts.conf</code>
+                    </p>
+
+                    4. Now, add this block of code:
+<pre class="line-numbers">
+<code class="lang-apacheconf">&lt;VirtualHost *:80&gt;
+    DocumentRoot "C:/Xampp/htdocs/myapp/"
+    ServerName myapp.dev
+&lt;/VirtualHost&gt;</code></pre>
+                    <br>
+
+                    5. Save, and restart your server. <br>
+                    6. Now, visit <code class="language-http">http://myapp.dev/</code> <br>
+
+                    7. If you don’t wanna do all this stuff, I have created a shell script (for windows)
+                    check out this <a href="https://github.com/strifejeyz/vHost-configurator">vHost Configurator</a>
+
+                    <br>
+                    <br>
+                    <br>
+
+                    <p class="sub-title">Virtual Host Installation for Linux/Mac</p>
+
+                    <ol>
+                        <li>Next, we’ll add our custom domain <code class="language-shell">sudo echo 127.0.0.5 myapp.dev >> /etc/hosts</code></li>
+                        <li>We need to enable vhosts first, <code class="language-text">sudo gedit /opt/lampp/etc/httpd.conf</code></li>
+                        <li>
+                            Now locate yourself in (about) the line 487 where you probably will find the following lines: <br>
+<pre class="line-numbers" data-start="487"><code class="language-apacheconf"># Virtual hosts
+#Include etc/extra/httpd-vhosts.conf</code></pre>
+
+                            As you can see, the Include statement that includes the <code class="languge-">httpd-vhosts.conf</code> file is commented. 	Proceed to modify the line uncommenting that line:
+<pre class="line-numbers" data-start="487"><code class="language-apacheconf"># Virtual hosts
+<b>Include etc/extra/httpd-vhosts.conf</b></code></pre>
+                        </li>
+                        <li>
+                            You need to add the virtual host in <code>/opt/lampp/etc/extra/httpd-vhosts.conf</code>
+                            Use your favorite editor to edit that file.
+                        </li>
+                        <li>
+                            The port that we will use will be <b>127.0.0.5</b> <br>
+<pre class="line-numbers">
+    <code class="lang-apacheconf">&lt;VirtualHost 127.0.0.5:80&gt;
+    DocumentRoot "/opt/lampp/htdocs/myapp"
+    DirectoryIndex index.php
+
+    &lt;Directory "/opt/lampp/htdocs/myapp"&gt;
+    Options All
+    AllowOverride All
+    Require all granted
+        &lt;/Directory&gt;
+&lt;/VirtualHost&gt;
+</code></pre>
+                        </li>
+                    </ol>
+
+                    6. Finally, restart your server. <code class="lang-shell">sudo /opt/lampp/lampp restart</code> and you should get this when you go to <code class="lang-http">http://myapp.dev/</code>
+
+                    <br>
+
+                    <div class="row">
+                        <div class="col-md-6"><br>
+                            <img src="img/welcome-screen.png" class="img-fluid img-thumbnail">
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div><!--sub-page-->
+
+            <br>
+            <br>
+
+            <p class="page-title">Basic Tutorial</p>
+            <div class="sub-page">
+                <p class="sub-title">Static Pages</p>
+            </div><!--sub-page-->
+
+
+
+        </div><!--container-fluid-->
+    </div><!-- /#page-content-wrapper -->
+</div><!-- /#wrapper -->
+
+
+<script src="js/treeview.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/prism.js"></script>
+<script src="js/bootstrap.bundle.min.js"></script>
+
+<script>
+    $("#menu-toggle").click(function (e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+</body>
+</html>
